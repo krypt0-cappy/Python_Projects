@@ -19,3 +19,4 @@ def lambda_handler(event, context):
         for volume in volumes:
             v = ec2.Volume(volume.id)
             print("The following EBS Volume is being deleted: {}, Size: {} GiB".format(v.id, v.size))
+            v.delete()
